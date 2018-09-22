@@ -1,2 +1,0 @@
-# littledata
-EOS smart contract
