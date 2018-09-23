@@ -1,0 +1,20 @@
+PODS:
+  - paper-onboarding (4.1.0)
+  - RevealingSplashView (0.5.0)
+
+DEPENDENCIES:
+  - paper-onboarding
+  - RevealingSplashView
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - paper-onboarding
+    - RevealingSplashView
+
+SPEC CHECKSUMS:
+  paper-onboarding: 344780cbb0bfc229cd1862f5b9bba446b23c5185
+  RevealingSplashView: 0794eecad3a8983ac11a1fe474e9a9b51b926780
+
+PODFILE CHECKSUM: 997136e263938fb847b57b4102380ca861f9dacd
+
+COCOAPODS: 1.5.0
