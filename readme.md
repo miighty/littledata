@@ -13,7 +13,7 @@ Key application components:
 2) Security : Storing Hashed data on the block chain
 3) Control: Your data is visible to you and you can control which companies can see it.
 4) Sharing : You have the power to share based on incentive
-Why Blockchain
+Why Blockchain?
 1. Trust
 2. Automation
 3. Immutability
