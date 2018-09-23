@@ -85,10 +85,10 @@ class Index extends Component {
     }
 
     // eosjs function call: connect to the blockchain
-    const eos = Eos({keyProvider: privateKey});
+    const eos = Eos({keyProvider: '5KbatPuLe2V9xE5QeEAaBUYftet2hN5es6d4t5s3dE6cPdwPpvB', httpEndpoint: 'http://10.20.3.75:8888'});
     const result = await eos.transaction({
       actions: [{
-        account: "notechainacc",
+        account: "littledataac",
         name: actionName,
         authorization: [{
           actor: account,
@@ -105,18 +105,58 @@ class Index extends Component {
   // gets table data from the blockchain
   // and saves it into the component state: "noteTable"
   getTable() {
-    const eos = Eos();
+    const eos = Eos({keyProvider: '5KbatPuLe2V9xE5QeEAaBUYftet2hN5es6d4t5s3dE6cPdwPpvB', httpEndpoint: 'http://10.20.3.75:8888'});
     eos.getTableRows({
       "json": true,
-      "code": "notechainacc",   // contract who owns the table
-      "scope": "notechainacc",  // scope of the table
-      "table": "notestruct",    // name of the table as specified by the contract abi
+      "code": "littledataac",   // contract who owns the table
+      "scope": "littledataac",  // scope of the table
+      "table": "littlestruct",    // name of the table as specified by the contract abi
       "limit": 100,
     }).then(result => this.setState({ noteTable: result.rows }));
   }
 
+  addData() {
+
+    const eos = Eos({keyProvider: '5KbatPuLe2V9xE5QeEAaBUYftet2hN5es6d4t5s3dE6cPdwPpvB', httpEndpoint: 'http://10.20.3.75:8888'});
+    eos.transaction({
+      actions: [{
+        account: "littledataac",
+        name: 'add',
+        authorization: [{
+          actor: 'mikeaccount1',
+          permission: 'active',
+        }],
+        data: {
+          '_user':'hacktest',
+          '_hashdata':'adsfasdfwe24'
+        },
+      }],
+    });
+  }
+
+  buyData() {
+    const eos = Eos({keyProvider: '5KbatPuLe2V9xE5QeEAaBUYftet2hN5es6d4t5s3dE6cPdwPpvB', httpEndpoint: 'http://10.20.3.75:8888'});
+    eos.transaction({
+      actions: [{
+        account: "littledataac",
+        name: 'buydata',
+        authorization: [{
+          actor: 'mikeaccount1',
+          permission: 'active',
+        }],
+        data: {
+          '_buyer':'nike1',
+          '_seller':'hacktest',
+          'price': 10000
+        },
+      }],
+    });
+  }
+
   componentDidMount() {
     this.getTable();
+    this.addData();
+    this.buyData();
   }
 
   render() {
