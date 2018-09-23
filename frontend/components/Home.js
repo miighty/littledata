@@ -3,9 +3,9 @@ import React from 'react';
 import ons from 'onsenui';
 
 import {
+  Button,
   Page,
   Toolbar,
-  List,
   ListItem,
   ListHeader
 } from 'react-onsenui';
@@ -18,7 +18,7 @@ import SpeedDials from './SpeedDials';
 
 const initialPlatform = ons.platform.isAndroid() ? 'android' : 'ios';
 
-class Home extends React.Component {
+class Dashboard extends React.Component {
   gotoComponent(component, key) {
     this.props.navigator.pushPage({comp: component, props: { key }});
   }
@@ -26,7 +26,7 @@ class Home extends React.Component {
   renderToolbar() {
     return (
       <Toolbar>
-        <div className='center'>Home</div>
+        <div className='center'>Dashboard</div>
       </Toolbar>
     );
   }
@@ -34,46 +34,16 @@ class Home extends React.Component {
   render() {
     return (
       <Page renderToolbar={this.renderToolbar}>
-        <p style={{padding: '0 15px'}}>
-          This is a kitchen sink example that shows off the React extension for Onsen UI.
-        </p>
+<Button modifier="large--cta">
+  Tap Me
+</Button>
 
-        <p style={{padding: '0 15px'}}>
-          <a href="https://onsen.io/v2/react.html" target="_blank"><strong>Official site with docs</strong></a>
-        </p>
-
-        <List
-          renderHeader={() => <ListHeader>Components</ListHeader>}
-          dataSource={[{
-            name: 'Pull to refresh',
-            component: PullToRefresh,
-            key: 'pull-to-refresh'
-          }, {
-            name: 'Infinite scroll',
-            component: InfiniteScroll,
-            key: 'infinite-scroll'
-          }, {
-            name: 'Side menu',
-            component: SideMenu,
-            key: 'side-menu'
-          }, {
-            name: 'Floating action button',
-            component: FloatingActionButton,
-            key: 'fab'
-          }, {
-            name: 'Speed dials',
-            component: SpeedDials,
-            key: 'speed-dials'
-          }]}
-          renderRow={(row) =>
-            <ListItem key={row.key} tappable onClick={this.gotoComponent.bind(this, row.component, row.key)}>
-              {row.name}
-            </ListItem>
-          }
-        />
       </Page>
     );
   }
 }
 
-module.exports = Home;
+module.exports = Dashboard;
+<Button modifier="large--cta">
+  Tap Me
+</Button>

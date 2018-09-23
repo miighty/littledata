@@ -12,9 +12,6 @@ import {
 
 
 import Home from './components/Home';
-import Dialogs from './components/Dialogs';
-import Forms from './components/Forms';
-import Animations from './components/Animations';
 
 class Tabs extends React.Component {
   renderTabs() {
@@ -22,18 +19,6 @@ class Tabs extends React.Component {
       {
         content: <Home key="home" navigator={this.props.navigator} />,
         tab: <Tab key="home" label="Home" icon="ion-ios-home-outline" />
-      },
-      {
-        content: <Dialogs key="dialogs" navigator={this.props.navigator} />,
-        tab: <Tab key="dialogs" label="Dialogs" icon="ion-ios-albums-outline" />
-      },
-      {
-        content: <Forms key="forms" />,
-        tab: <Tab key="forms" label="Forms" icon="ion-edit" />
-      },
-      {
-        content: <Animations key="animations" navigator={this.props.navigator} />,
-        tab: <Tab key="animations" label="Animations" icon="ion-film-marker" />
       }
     ];
   }
